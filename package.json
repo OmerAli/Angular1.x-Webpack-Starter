@@ -1,0 +1,29 @@
+{
+  "name": "Angular-Pattern-webpack",
+  "version": "1.0.0",
+  "description": "Angular 1.x Starter with webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bundle": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OOmerAli/Angular-1.x-Webpack-Starter"
+  },
+  "keywords": [
+    "AngularJS",
+    "Express",
+    "SCSS"
+  ],
+  "author": "Omer Ali <omer.a@nebras.ae>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OOmerAli/Angular-1.x-Webpack-Starter/issues"
+  },
+  "homepage": "https://github.com/OOmerAli/Angular-1.x-Webpack-Starte/blob/master/README.md",
+  "devDependencies": {
+    "webpack": "^3.10.0"
+  },
+  "dependencies": {}
+}
