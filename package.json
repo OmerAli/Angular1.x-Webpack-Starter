@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OOmerAli/Angular-1.x-Webpack-Starter"
+    "url": "git+https://github.com/OmerAli/Angular1.x-Webpack-Starter"
   },
   "keywords": [
     "AngularJS",
@@ -19,9 +19,9 @@
   "author": "Omer Ali <omer.a@nebras.ae>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/OOmerAli/Angular-1.x-Webpack-Starter/issues"
+    "url": "https://github.com/OmerAli/Angular1.x-Webpack-Starter/issues"
   },
-  "homepage": "https://github.com/OOmerAli/Angular-1.x-Webpack-Starte/blob/master/README.md",
+  "homepage": "https://github.com/OmerAli/Angular1.x-Webpack-Starter/blob/master/README.md",
   "devDependencies": {
     "webpack": "^3.10.0"
   },
