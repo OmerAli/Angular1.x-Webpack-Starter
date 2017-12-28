@@ -1,0 +1,70 @@
+<% var item, key %>
+<% htmlWebpackPlugin.options.links = htmlWebpackPlugin.options.links || [] %>
+<% htmlWebpackPlugin.options.scripts = htmlWebpackPlugin.options.scripts || [] %>
+<!DOCTYPE html>
+<!--[if lt IE 7 ]>
+  <html class="ie6" lang="en"<% if (htmlWebpackPlugin.files.manifest) { %> manifest="<%= htmlWebpackPlugin.files.manifest %>"<% } %>>
+<![endif]-->
+<!--[if IE 7 ]>
+  <html class="ie7" lang="en"<% if (htmlWebpackPlugin.files.manifest) { %> manifest="<%= htmlWebpackPlugin.files.manifest %>"<% } %>>
+<![endif]-->
+<!--[if IE 8 ]>
+  <html class="ie8" lang="en"<% if (htmlWebpackPlugin.files.manifest) { %> manifest="<%= htmlWebpackPlugin.files.manifest %>"<% } %>>
+<![endif]-->
+<!--[if IE 9 ]>
+  <html class="ie9" lang="en"<% if (htmlWebpackPlugin.files.manifest) { %> manifest="<%= htmlWebpackPlugin.files.manifest %>"<% } %>>
+<![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en"<% if (htmlWebpackPlugin.files.manifest) { %> manifest="<%= htmlWebpackPlugin.files.manifest %>"<% } %> ng-app="app">
+<!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" ontent="en-US,fr">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1, minimum-scale=1"
+    >
+
+    <meta name="copyright" content="&copy; 2017 Nebras Enterprise Solution">
+    <meta name="keywords" content="Webpack Angular1.x-Webpack Bundling">
+
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="-1" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <% for (item of htmlWebpackPlugin.options.links) { %>
+    <% if (typeof item === 'string' || item instanceof String) { item = { href: item, rel: 'stylesheet' } } %>
+    <link<% for (key in item) { %> <%= key %>="<%= item[key] %>"<% } %>>
+    <% } %>
+    <% for (key in htmlWebpackPlugin.files.css) { %>
+    <link href="<%= htmlWebpackPlugin.files.css[key] %>" rel="stylesheet">
+    <% } %>
+
+    <base href="/">
+  </head>
+  <body class="<%= htmlWebpackPlugin.options.name %>">
+
+    <div ui-view></div>
+
+
+    <% if (htmlWebpackPlugin.options.window) { %>
+    <script type="text/javascript">
+      <% for (key in htmlWebpackPlugin.options.window) { %>
+      window['<%= key %>'] = <%= JSON.stringify(htmlWebpackPlugin.options.window[key]) %>;
+      <% } %>
+    </script>
+    <% } %>
+    <% for (item of htmlWebpackPlugin.options.scripts) { %>
+    <% if (typeof item === 'string' || item instanceof String) { item = { src: item, type: 'text/javascript' } } %>
+    <script<% for (key in item) { %> <%= key %>="<%= item[key] %>"<% } %>></script>
+    <% } %>
+    <% for (key in htmlWebpackPlugin.files.chunks) { %>
+    <script src="<%= htmlWebpackPlugin.files.chunks[key].entry %>" type="text/javascript"></script>
+    <% } %>
+  </body>
+</html>
